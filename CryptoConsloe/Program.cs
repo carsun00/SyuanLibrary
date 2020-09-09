@@ -9,10 +9,12 @@ namespace CryptoConsloe
         {
             Console.WriteLine("Aes Display");
             AesDisplay();
-            
+
             Console.WriteLine("\nDes Display");
             DesDisplay();
 
+            Console.WriteLine("\nTripleDesc Display");
+            TripleDescDisplay();
             Console.ReadKey();
         }
 
@@ -35,6 +37,17 @@ namespace CryptoConsloe
         {
             DesController des = new DesController();
             des.Display();
+        }
+        #endregion
+
+        #region TripleDesc
+        /// <summary>
+        ///     Aes的加解密演示
+        /// </summary>
+        private static void TripleDescDisplay()
+        {
+            TripleDescController TripleDesc = new TripleDescController();
+            TripleDesc.Display();
         }
         #endregion
     }
