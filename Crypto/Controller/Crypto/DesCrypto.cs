@@ -6,12 +6,12 @@ using System.Text;
 
 namespace Crypto.Controller.Crypto
 {
-    public class AesCrypto : AbstractCrypto
+    public class DesCrypto : AbstractCrypto
     {
 
         #region 解密
         /// <summary>
-        ///     解密
+        ///     
         /// </summary>
         /// <param name="toDecrypt"></param>
         /// <returns>string</returns>
@@ -75,7 +75,7 @@ namespace Crypto.Controller.Crypto
         /// <returns></returns>
         public override SymmetricAlgorithm GenerateCrypto(ISymmetricAlgorithm CryptoParamater)
         {
-            Crypto = new AesCryptoServiceProvider
+            Crypto = new DESCryptoServiceProvider
             {
                 Key = CryptoParamater.GetKey(),
                 IV = CryptoParamater.GetIV(),
