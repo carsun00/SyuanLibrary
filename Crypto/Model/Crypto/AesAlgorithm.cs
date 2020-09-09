@@ -8,6 +8,7 @@ namespace Crypto.Model.Crypto
     /// </summary>
     public class AesAlgorithm : AbstractSymmetricAlgorithm
     {
+        #region 覆寫的方法
         /// <summary>
         ///     自定義的Encoding格式
         /// </summary>
@@ -17,6 +18,7 @@ namespace Crypto.Model.Crypto
         {
             return Encoding.UTF8.GetBytes(key);
         }
+        #endregion
 
     }
 }

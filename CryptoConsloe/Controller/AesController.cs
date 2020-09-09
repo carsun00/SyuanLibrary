@@ -10,9 +10,15 @@ namespace CryptoConsloe.Controller
     /// </summary>
     public class AesController
     {
+        #region 金匙
+        /// <summary>
+        ///     如要彈性修改，請將此設定放到Config等檔案內。
+        /// </summary>
         readonly string sourceIV = "123456qweasdzxcq";
         readonly string AseKey = "123456789qweasdzxc987654cxzdsaew";
+        #endregion
 
+        #region 展示
         /// <summary>
         ///     展示如何實作。
         /// </summary>
@@ -33,7 +39,9 @@ namespace CryptoConsloe.Controller
             string deCrypto = aesCrypto.DeCrypto(enCrypto);
             Console.WriteLine("\n解密後的訊息：{" + deCrypto + "}");
         }
+        #endregion
 
+        #region 初始化
         /// <summary>
         ///     inital AesCrypto.
         ///     初始化
@@ -47,10 +55,12 @@ namespace CryptoConsloe.Controller
             aesCrypto.GenerateCrypto(aesAlgorithm);
             return aesCrypto;
         }
+        #endregion
 
+        #region 設定加密演算法
         /// <summary>
         ///     setting algorithm
-        ///     設定API的加密演算法
+        ///     設定加密演算法
         /// </summary>
         /// <returns>AesAlgorithm</returns>
         private AesAlgorithm SetAlgorithm()
@@ -63,5 +73,7 @@ namespace CryptoConsloe.Controller
             aesAlgorithm.SetPadding(PaddingMode.PKCS7);
             return aesAlgorithm;
         }
+        #endregion
+
     }
 }

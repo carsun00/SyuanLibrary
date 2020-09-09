@@ -11,6 +11,7 @@ namespace CryptoConsloe
             Console.ReadKey();
         }
 
+        #region AES
         /// <summary>
         ///     Aes的加解密演示
         /// </summary>
@@ -19,5 +20,6 @@ namespace CryptoConsloe
             AesController aes = new AesController();
             aes.Display();
         }
+        #endregion
     }
 }
