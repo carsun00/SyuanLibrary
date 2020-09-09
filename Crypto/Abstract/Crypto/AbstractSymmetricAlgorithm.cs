@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32.SafeHandles;
+﻿using Crypto.Interface;
+using Microsoft.Win32.SafeHandles;
 using System;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
@@ -8,7 +9,7 @@ namespace Crypto.Abstract.Crypto
     /// <summary>
     ///     金匙設定集中控管
     /// </summary>
-    public abstract class AbstractSymmetricAlgorithm : IDisposable
+    public abstract class AbstractSymmetricAlgorithm : IDisposable, ISymmetricAlgorithm
     {
         #region 宣告參數
 
@@ -65,12 +66,30 @@ namespace Crypto.Abstract.Crypto
         }
 
         /// <summary>
+        ///     取得加密金匙
+        /// </summary>
+        /// <returns></returns>
+        public byte[] GetKey()
+        {
+            return Key;
+        }
+
+        /// <summary>
         ///     設定偏移金匙
         /// </summary>
         /// <param name="iv"></param>
         public void SetIV(string iv)
         {
             IV = EncodingFormat(iv);
+        }
+
+        /// <summary>
+        ///     取得偏移金匙
+        /// </summary>
+        /// <returns></returns>
+        public byte[] GetIV()
+        {
+            return IV;
         }
 
         /// <summary>
@@ -83,12 +102,31 @@ namespace Crypto.Abstract.Crypto
         }
 
         /// <summary>
-        ///     設定偏移金匙
+        ///     取得編碼格式
+        /// </summary>
+        /// <returns></returns>
+        public CipherMode GetMode()
+        {
+            return Mode;
+        }
+
+
+        /// <summary>
+        ///     設定補零模式
         /// </summary>
         /// <param name="iv"></param>
         public void SetPadding(PaddingMode padding)
         {
             Padding = padding;
+        }
+
+        /// <summary>
+        ///     取得補零模式
+        /// </summary>
+        /// <returns></returns>
+        public PaddingMode GetPadding()
+        {
+            return Padding;
         }
 
         #endregion
@@ -131,6 +169,7 @@ namespace Crypto.Abstract.Crypto
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }
+
         #endregion
     }
 }

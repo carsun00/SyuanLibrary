@@ -1,4 +1,5 @@
-﻿using Crypto.Model.Crypto;
+﻿using Crypto.Interface;
+using Crypto.Model.Crypto;
 using Microsoft.Win32.SafeHandles;
 using System;
 using System.Runtime.InteropServices;
@@ -42,7 +43,7 @@ namespace Crypto.Abstract.Crypto
         /// </summary>
         /// <param name="CryptoParamater"></param>
         /// <returns></returns>
-        public abstract SymmetricAlgorithm GenerateCrypto(AesAlgorithm CryptoParamater);
+        public abstract SymmetricAlgorithm GenerateCrypto(ISymmetricAlgorithm CryptoParamater);
 
         /// <summary>
         ///     加密

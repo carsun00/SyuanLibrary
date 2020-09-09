@@ -1,4 +1,5 @@
 ﻿using Crypto.Abstract.Crypto;
+using Crypto.Interface;
 using Crypto.Model.Crypto;
 using System;
 using System.Security.Cryptography;
@@ -68,14 +69,14 @@ namespace Crypto.Controller.Crypto
         /// </summary>
         /// <param name="CryptoParamater">0</param>
         /// <returns></returns>
-        public override SymmetricAlgorithm GenerateCrypto(AesAlgorithm CryptoParamater)
+        public override SymmetricAlgorithm GenerateCrypto(ISymmetricAlgorithm CryptoParamater)
         {
             Crypto = new AesCryptoServiceProvider
             {
-                Key = CryptoParamater.Key,
-                IV = CryptoParamater.IV,
-                Mode = CryptoParamater.Mode,
-                Padding = CryptoParamater.Padding
+                Key = CryptoParamater.GetKey(),
+                IV = CryptoParamater.GetIV(),
+                Mode = CryptoParamater.GetMode(),
+                Padding = CryptoParamater.GetPadding()
             };
             return Crypto;
         }
