@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 
 namespace CryptoConsloe.Controller
 {
-    class DesController
+    public class DesController
     {
 
         #region 金匙
@@ -13,7 +13,7 @@ namespace CryptoConsloe.Controller
         ///     如要彈性修改，請將此設定放到Config等檔案內。
         /// </summary>
         readonly string sourceIV = "A7654321";
-        readonly string AseKey = "1234567A";
+        readonly string DseKey = "1234567A";
         /*   
          *   必須為 8 個 ASCII 字元，超過會被自動切除，
          *    舉例今天使用 [ 0123456789 ] 10碼進行加密，
@@ -72,7 +72,7 @@ namespace CryptoConsloe.Controller
         {
             //  因為加密模式可能不相同，所以選擇在實體化的時候設定演算法。
             DesAlgorithm desAlgorithm = new DesAlgorithm();
-            desAlgorithm.SetKey(AseKey);
+            desAlgorithm.SetKey(DseKey);
             desAlgorithm.SetIV(sourceIV);
             desAlgorithm.SetMode(CipherMode.CBC);
             desAlgorithm.SetPadding(PaddingMode.PKCS7);
