@@ -60,7 +60,7 @@ namespace Crypto.Abstract.Crypto
         ///     設定加密金匙
         /// </summary>
         /// <param name="key"></param>
-        public void SetKey(string key)
+        public virtual void SetKey(string key)
         {
             Key = EncodingFormat(key);
         }
@@ -78,7 +78,7 @@ namespace Crypto.Abstract.Crypto
         ///     設定偏移金匙
         /// </summary>
         /// <param name="iv"></param>
-        public void SetIV(string iv)
+        public virtual void SetIV(string iv)
         {
             IV = EncodingFormat(iv);
         }
@@ -87,7 +87,7 @@ namespace Crypto.Abstract.Crypto
         ///     取得偏移金匙
         /// </summary>
         /// <returns></returns>
-        public byte[] GetIV()
+        public virtual byte[] GetIV()
         {
             return IV;
         }
