@@ -3,6 +3,7 @@ using Microsoft.Win32.SafeHandles;
 using System;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace Crypto.Abstract.Crypto
 {
@@ -43,21 +44,62 @@ namespace Crypto.Abstract.Crypto
         /// <param name="CryptoParamater"></param>
         /// <returns></returns>
         public abstract SymmetricAlgorithm GenerateCrypto(ISymmetricAlgorithm CryptoParamater);
+        #endregion
 
+        #region 可複寫的加解密method
         /// <summary>
         ///     加密
         /// </summary>
         /// <param name="Crypto"></param>
         /// <returns>回傳加密後的密文(string)</returns>
-        public abstract string EnCrypto(string toEncrypt);
+        public virtual string EnCrypto(string toEncrypt)
+        {
+            try
+            {
+                byte[] toEncryptArray = Encoding.UTF8.GetBytes(toEncrypt);
+                byte[] resultArray = Crypto.CreateEncryptor().TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+
+                return Convert.ToBase64String(resultArray, 0, resultArray.Length);
+            }
+            catch(Exception ex)
+            {
+                return ex.Message;
+            }
+        }
 
         /// <summary>
         ///     解密
         /// </summary>
         /// <param name="Crypto"></param>
         /// <returns>回傳解密後的明文(string)</returns>
-        public abstract string DeCrypto(string toDecrypt);
+        public virtual string DeCrypto(string toDecrypt)
+        {
+            try
+            {
+                ICryptoTransform cTransform = Crypto.CreateDecryptor();
+                byte[] enBytes = Convert.FromBase64String(toDecrypt);
+                byte[] resultArray = cTransform.TransformFinalBlock(enBytes, 0, enBytes.Length);
+                Crypto.Clear();
 
+                return Encoding.UTF8.GetString(resultArray);
+            }
+            catch(Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                /*
+                 *  正常情況下，
+                 *  API加密取資料會伴隨著取回後的密文代解密。
+                 *  因此在這邊放入Dispose自動釋放資源。
+                 */
+                if(Crypto != null)
+                {
+                    Crypto.Dispose();
+                }
+            }
+        }
         #endregion
 
         #region Dispose 資源控制
