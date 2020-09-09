@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CryptoConsloe.Controller;
+using System;
 
 namespace CryptoConsloe
 {
@@ -6,7 +7,17 @@ namespace CryptoConsloe
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            AesDisplay();
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        ///     Aes的加解密演示
+        /// </summary>
+        private static void AesDisplay()
+        {
+            AesController aes = new AesController();
+            aes.Display();
         }
     }
 }

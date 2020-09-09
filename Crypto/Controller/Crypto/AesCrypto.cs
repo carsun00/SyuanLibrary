@@ -31,6 +31,11 @@ namespace Crypto.Controller.Crypto
             }
             finally
             {
+                /*
+                 *  正常情況下，
+                 *  API加密取資料會伴隨著取回後的密文代解密。
+                 *  因此在這邊放入Dispose自動釋放資源。
+                 */
                 if(Crypto != null)
                 {
                     Crypto.Dispose();
