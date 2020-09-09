@@ -1,5 +1,4 @@
 ﻿using Crypto.Interface;
-using Crypto.Model.Crypto;
 using Microsoft.Win32.SafeHandles;
 using System;
 using System.Runtime.InteropServices;

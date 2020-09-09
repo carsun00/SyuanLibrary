@@ -1,6 +1,5 @@
 ﻿using Crypto.Abstract.Crypto;
 using Crypto.Interface;
-using Crypto.Model.Crypto;
 using System;
 using System.Security.Cryptography;
 using System.Text;
@@ -9,7 +8,8 @@ namespace Crypto.Controller.Crypto
 {
     public class AesCrypto : AbstractCrypto
     {
-        #region 方法
+
+        #region 解密
         /// <summary>
         ///     解密
         /// </summary>
@@ -43,7 +43,9 @@ namespace Crypto.Controller.Crypto
                 }
             }
         }
+        #endregion
 
+        #region 加密
         /// <summary>
         ///     加密
         /// </summary>
@@ -63,7 +65,9 @@ namespace Crypto.Controller.Crypto
                 return ex.Message;
             }
         }
+        #endregion
 
+        #region 初始化加密物件
         /// <summary>
         ///     初始化加密物件。
         /// </summary>
@@ -80,7 +84,7 @@ namespace Crypto.Controller.Crypto
             };
             return Crypto;
         }
-
         #endregion
+
     }
 }

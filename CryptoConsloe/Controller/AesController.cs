@@ -10,6 +10,7 @@ namespace CryptoConsloe.Controller
     /// </summary>
     public class AesController
     {
+
         #region 金匙
         /// <summary>
         ///     如要彈性修改，請將此設定放到Config等檔案內。
@@ -37,7 +38,7 @@ namespace CryptoConsloe.Controller
 
             //  Decrypto
             string deCrypto = aesCrypto.DeCrypto(enCrypto);
-            Console.WriteLine("\n解密後的訊息：{" + deCrypto + "}");
+            Console.WriteLine("解密後的訊息：{" + deCrypto + "}");
         }
         #endregion
 
