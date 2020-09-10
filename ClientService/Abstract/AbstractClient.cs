@@ -44,8 +44,8 @@ namespace ClientService.Abstract
         /// </summary>
         /// <param name="Url">Your get Url</param>
         /// <returns>json string data</returns>
-        public abstract string GetClientAsync(string Url);
-
+        public abstract string GetClient(string Url);
+        
         /// <summary>
         ///     Post methond.
         ///     Post方法.
@@ -54,7 +54,7 @@ namespace ClientService.Abstract
         /// <param name="JsonString">Using json string</param>
         /// <returns>Json string data</returns>
         public abstract string PostClient(string Url, string JsonString);
-
+        /*
         /// <summary>
         ///     Put methond
         ///     Put方法
@@ -72,7 +72,7 @@ namespace ClientService.Abstract
         /// <param name="JsonString">Using json string</param>
         public abstract void DeleteClient(string Url, string JsonString);
 
-        /*
+        
         /// <summary>
         ///     for now Unused.
         /// </summary>
