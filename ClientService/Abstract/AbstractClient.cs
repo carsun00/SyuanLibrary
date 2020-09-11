@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32.SafeHandles;
+﻿using ClientService.Model;
+using Microsoft.Win32.SafeHandles;
 using System;
 using System.Runtime.InteropServices;
 
@@ -44,8 +45,8 @@ namespace ClientService.Abstract
         /// </summary>
         /// <param name="Url">Your get Url</param>
         /// <returns>json string data</returns>
-        public abstract string GetClient(string Url);
-        
+        public abstract ResponseData GetClient(string Url);
+
         /// <summary>
         ///     Post methond.
         ///     Post方法.
@@ -53,7 +54,9 @@ namespace ClientService.Abstract
         /// <param name="Url">Your post Url</param>
         /// <param name="JsonString">Using json string</param>
         /// <returns>Json string data</returns>
-        public abstract string PostClient(string Url, string JsonString);
+        public abstract ResponseData PostClient(string Url, string JsonString);
+
+        #region 未定義
         /*
         /// <summary>
         ///     Put methond
@@ -81,6 +84,7 @@ namespace ClientService.Abstract
         /// <returns></returns>
         public abstract string PatchClient(string Url, string JsonString);
         */
+        #endregion
 
         #endregion
 
