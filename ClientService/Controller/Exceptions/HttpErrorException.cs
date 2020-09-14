@@ -3,6 +3,10 @@ using Newtonsoft.Json;
 
 namespace ClientService.Controller.Exceptions
 {
+    /// <summary>
+    ///     Custom Http Client Exception in here.
+    ///     在這邊客製化Http例外處理。
+    /// </summary>
     public class HttpErrorException
     {
         HttpErrorResponse response = new HttpErrorResponse();
