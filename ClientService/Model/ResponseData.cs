@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System.Net;
+using System.Net.Http;
 
 namespace ClientService.Model
 {
@@ -11,7 +12,7 @@ namespace ClientService.Model
         ///     要定義回傳的錯誤狀態。
         ///     Status Code refance : https://zh.wikipedia.org/zh-tw/HTTP%E7%8A%B6%E6%80%81%E7%A0%81
         /// </summary>
-        public int StatusCode;
+        public HttpStatusCode StatusCode;
 
         /// <summary>
         ///     Your response date or error message(Json string).
@@ -24,10 +25,10 @@ namespace ClientService.Model
 
         public ResponseData(HttpResponseMessage response)
         {
-            StatusCode = (int)response.StatusCode;
+            StatusCode = response.StatusCode;
             Data = response.Content.ReadAsStringAsync().Result;
         }
-        public ResponseData(int status, string response)
+        public ResponseData(HttpStatusCode status, string response)
         {
             StatusCode = status;
             Data = response;

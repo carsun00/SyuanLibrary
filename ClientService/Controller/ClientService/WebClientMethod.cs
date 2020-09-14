@@ -33,7 +33,7 @@ namespace ClientService.Controller.ClientService
                     wc.Encoding = Encoding.UTF8;
 
                     httpResponse = new ResponseData(
-                        (int)HttpStatusCode.OK
+                        HttpStatusCode.OK
                         , wc.DownloadString(Url)
                         );
                 }
@@ -52,7 +52,7 @@ namespace ClientService.Controller.ClientService
                  *  建議開一個類別專門處理異常。
                  */
                 httpResponse = new ResponseData(
-                    (int)HttpStatusCode.InternalServerError
+                    HttpStatusCode.InternalServerError
                     , "define your error message"
                 );
             }
@@ -72,7 +72,7 @@ namespace ClientService.Controller.ClientService
 
                     byte[] ApiRepasonesByByte = wc.UploadValues(Url, NameValue);
                     httpResponse = new ResponseData(
-                        (int)HttpStatusCode.OK
+                        HttpStatusCode.OK
                         , Encoding.UTF8.GetString(ApiRepasonesByByte)
                         );
                 }
@@ -91,7 +91,7 @@ namespace ClientService.Controller.ClientService
                  *  建議開一個類別專門處理異常。
                  */
                 httpResponse = new ResponseData(
-                    (int)HttpStatusCode.InternalServerError
+                    HttpStatusCode.InternalServerError
                     , "define your error message"
                 );
             }

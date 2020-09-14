@@ -78,7 +78,7 @@ namespace ClientService.Controller.ClientService
                      *  建議開一個類別專門處理異常。
                      */
                     httpResponse = new ResponseData(
-                        (int)HttpStatusCode.InternalServerError
+                        HttpStatusCode.InternalServerError
                         , "define your error message"
                     );
                 }
@@ -117,7 +117,7 @@ namespace ClientService.Controller.ClientService
                 catch(Exception)
                 {
                     httpResponse = new ResponseData(
-                        (int)HttpStatusCode.InternalServerError
+                        HttpStatusCode.InternalServerError
                         , "define your error message");
                 }
             }
