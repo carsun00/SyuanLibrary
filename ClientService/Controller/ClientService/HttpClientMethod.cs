@@ -126,7 +126,7 @@ namespace ClientService.Controller.ClientService
 
         #endregion
 
-        #region private methon
+        #region private methond
 
         /// <summary>
         ///     Generate HttpContent name value collection.
