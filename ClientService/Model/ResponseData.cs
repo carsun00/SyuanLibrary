@@ -2,6 +2,7 @@
 using ClientService.Model.Response.Error;
 using Newtonsoft.Json;
 using System;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 
@@ -74,13 +75,16 @@ namespace ClientService.Model
             //  Setting return error msg.
             switch(exception.GetType().Name)
             {
-                //  Exception case
+                //  Exception case and define your Msg.
                 #region AggregateException
                 case "AggregateException":
                     SetResponseData(
                        HttpStatusCode.InternalServerError,
-                       errorException.GetDebugMsg(exception.Message)
+                       errorException.GetDebugMsg("AggregateException")
                        );
+
+                    // Debug Mode Issue Trace.
+                    SetDebugData(exception.StackTrace);
                     break;
                 #endregion
 
@@ -91,7 +95,7 @@ namespace ClientService.Model
                         errorException.GetDefaultMsg()
                         );
                     break;
-                #endregion
+                    #endregion
 
             }
         }
@@ -107,6 +111,11 @@ namespace ClientService.Model
             Data = AnyStringData;
         }
 
+        [Conditional("DEBUG")]
+        private void SetDebugData(string exception)
+        {
+            Data = exception;
+        }
         #endregion
     }
 }
