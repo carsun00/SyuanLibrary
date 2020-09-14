@@ -38,7 +38,7 @@ namespace ClientService.Controller.ClientService
                         );
                 }
             }
-            catch(Exception)
+            catch(Exception exception)
             {
                 /*  
                  *  Your exception handling.
@@ -51,10 +51,7 @@ namespace ClientService.Controller.ClientService
                  *  
                  *  建議開一個類別專門處理異常。
                  */
-                httpResponse = new ResponseData(
-                    HttpStatusCode.InternalServerError
-                    , "define your error message"
-                );
+                httpResponse = new ResponseData(exception);
             }
             return httpResponse;
         }
@@ -77,7 +74,7 @@ namespace ClientService.Controller.ClientService
                         );
                 }
             }
-            catch(Exception)
+            catch(Exception exception)
             {
                 /*  
                  *  Your exception handling.
@@ -90,10 +87,7 @@ namespace ClientService.Controller.ClientService
                  *  
                  *  建議開一個類別專門處理異常。
                  */
-                httpResponse = new ResponseData(
-                    HttpStatusCode.InternalServerError
-                    , "define your error message"
-                );
+                httpResponse = new ResponseData(exception);
             }
             return httpResponse;
         }

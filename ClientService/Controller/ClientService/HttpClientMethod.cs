@@ -2,7 +2,6 @@
 using ClientService.Model;
 using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Net.Http;
 
 namespace ClientService.Controller.ClientService
@@ -64,7 +63,7 @@ namespace ClientService.Controller.ClientService
                         httpResponse = new ResponseData(response);
                     }
                 }
-                catch(Exception)
+                catch(Exception exception)
                 {
                     /*  
                      *  Your exception handling.
@@ -77,10 +76,7 @@ namespace ClientService.Controller.ClientService
                      *  
                      *  建議開一個類別專門處理異常。
                      */
-                    httpResponse = new ResponseData(
-                        HttpStatusCode.InternalServerError
-                        , "define your error message"
-                    );
+                    httpResponse = new ResponseData(exception);
                 }
             }
 
@@ -106,7 +102,6 @@ namespace ClientService.Controller.ClientService
                 HttpContent httpContent = GetNameValueCollection(JsonString);
                 #endregion
 
-
                 try
                 {
                     using(HttpResponseMessage response = httpClient.PostAsync(Url, httpContent).Result)
@@ -114,11 +109,9 @@ namespace ClientService.Controller.ClientService
                         httpResponse = new ResponseData(response);
                     }
                 }
-                catch(Exception)
+                catch(Exception exception)
                 {
-                    httpResponse = new ResponseData(
-                        HttpStatusCode.InternalServerError
-                        , "define your error message");
+                    httpResponse = new ResponseData(exception);
                 }
             }
             return httpResponse;

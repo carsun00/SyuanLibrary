@@ -1,4 +1,8 @@
-﻿using System.Net;
+﻿using ClientService.Controller.Exceptions;
+using ClientService.Model.Response.Error;
+using Newtonsoft.Json;
+using System;
+using System.Net;
 using System.Net.Http;
 
 namespace ClientService.Model
@@ -23,15 +27,84 @@ namespace ClientService.Model
 
         #region New Methond
 
+        #region Success(成功)
+        /// <summary>
+        ///     Request success.
+        /// </summary>
+        /// <param name="response"></param>
         public ResponseData(HttpResponseMessage response)
         {
+            /* 
+             *  Some time remote server reponse error.
+             *  don't need process, jsut return error to client.
+             *  so StatusCode should be send back together.
+             *  
+             *  有時候遠端伺服器回應錯誤.
+             *  不用額外處裡可以直接回傳錯誤給Client.
+             *  所以StatusCode應該要一起回傳
+             */
             StatusCode = response.StatusCode;
             Data = response.Content.ReadAsStringAsync().Result;
         }
+        #endregion
+
+        #region Custom(客製化)
+        /// <summary>
+        ///     Custom response message.
+        /// </summary>
+        /// <param name="status">Define your http sataus.</param>
+        /// <param name="response">Your custom response</param>
         public ResponseData(HttpStatusCode status, string response)
         {
             StatusCode = status;
             Data = response;
+        }
+        #endregion
+
+        #region Exception(例外)
+
+        /// <summary>
+        ///     Corresponding status code is generated when receiving errors.
+        ///     接收錯誤產生相對應的狀態Code.
+        /// </summary>
+        /// <param name="exception"></param>
+        public ResponseData(Exception exception)
+        {
+            HttpErrorException errorException = new HttpErrorException();
+            //  Setting return error msg.
+            switch(exception.GetType().Name)
+            {
+                //  Exception case
+                #region AggregateException
+                case "AggregateException":
+                    SetResponseData(
+                       HttpStatusCode.InternalServerError,
+                       errorException.GetDebugMsg(exception.Message)
+                       );
+                    break;
+                #endregion
+
+                #region default
+                default:
+                    SetResponseData(
+                        HttpStatusCode.InternalServerError,
+                        errorException.GetDefaultMsg()
+                        );
+                    break;
+                #endregion
+
+            }
+        }
+        #endregion
+
+        #endregion
+
+        #region private mothend
+
+        private void SetResponseData(HttpStatusCode ststus, string AnyStringData)
+        {
+            StatusCode = ststus;
+            Data = AnyStringData;
         }
 
         #endregion
