@@ -4,7 +4,7 @@
     ///     Response model for local server program catch .
     ///     本地伺服器內的錯誤回應模型。
     /// </summary>
-    public class HttpErrorResponse
+    public class ServerErrorResponse
     {
 
         #region parrmater 宣告參數
