@@ -1,5 +1,5 @@
-﻿using ClientService.Controller.Exceptions;
-using ClientService.Model.Response.Error;
+﻿
+using ExceptionLib.Controller.Error;
 using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
@@ -71,7 +71,7 @@ namespace ClientService.Model
         /// <param name="exception"></param>
         public ResponseData(Exception exception)
         {
-            HttpErrorException errorException = new HttpErrorException();
+            ServerException errorException = new ServerException();
             //  Setting return error msg.
             switch(exception.GetType().Name)
             {
@@ -80,7 +80,7 @@ namespace ClientService.Model
                 case "AggregateException":
                     SetResponseData(
                        HttpStatusCode.InternalServerError,
-                       errorException.GetDebugMsg("AggregateException")
+                       errorException.ErrorException(exception)
                        );
 
                     // Debug Mode Issue Trace.

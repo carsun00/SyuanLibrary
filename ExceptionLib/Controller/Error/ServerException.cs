@@ -1,4 +1,4 @@
-﻿using ExceptionLib.Interface;
+﻿using ExceptionLib.Interface.Error;
 using ExceptionLib.Model.Error;
 using Newtonsoft.Json;
 using System;
