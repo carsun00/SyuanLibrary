@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ExceptionLib.Interface.Error
+namespace PrototypeException.Interface.Error
 {
     /// <summary>
     ///     Define your exception case.

@@ -1,9 +1,9 @@
-﻿using Crypto.Controller.Crypto;
-using Crypto.Model.Crypto;
+﻿using PropotypeCrypto.Controller.Crypto;
+using PropotypeCrypto.Model.Crypto;
 using System;
 using System.Security.Cryptography;
 
-namespace CryptoConsloe.Controller
+namespace PropotypeCryptoConsloe.Controller
 {
     /// <summary>
     ///     Aes實作
@@ -31,7 +31,7 @@ namespace CryptoConsloe.Controller
             //  Crypto Msg
             string OriginalMsg = "This is test message. 這是測試訊息.";
             Console.WriteLine("將要被加密的訊息：{" + OriginalMsg + "}");
-            
+
             //  Encrypto
             string enCrypto = aesCrypto.EnCrypto(OriginalMsg);
             Console.WriteLine("\n加密後的訊息：{" + enCrypto + "}");

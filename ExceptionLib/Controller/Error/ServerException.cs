@@ -1,9 +1,9 @@
-﻿using ExceptionLib.Interface.Error;
-using ExceptionLib.Model.Error;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using PrototypeException.Interface.Error;
+using PrototypeException.Model.Error;
 using System;
 
-namespace ExceptionLib.Controller.Error
+namespace PrototypeException.Controller.Error
 {
     public class ServerException : IErrorException
     {
@@ -37,8 +37,8 @@ namespace ExceptionLib.Controller.Error
                 default:
                     stingReturn = GetDefaultMsg();
                     break;
-                
-                #endregion
+
+                    #endregion
 
             }
 

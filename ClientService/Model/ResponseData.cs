@@ -1,12 +1,11 @@
-﻿
-using ExceptionLib.Controller.Error;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using PrototypeException.Controller.Error;
 using System;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 
-namespace ClientService.Model
+namespace PropotypeClientService.Model
 {
     public class ResponseData
     {

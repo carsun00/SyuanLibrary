@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MemoryCacheLib.Controller
+namespace LibMemoryCache.LibFile
 {
     /// <summary>
     ///     This Class onle process Set and Get.

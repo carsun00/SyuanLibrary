@@ -1,7 +1,7 @@
-﻿using Crypto.Abstract.Crypto;
+﻿using PropotypeCrypto.Abstract.Crypto;
 using System.Text;
 
-namespace Crypto.Model.Crypto
+namespace PropotypeCrypto.Model.Crypto
 {
     /// <summary>
     ///     會因各自程式不同需求，有不同的位元編碼方式

@@ -1,4 +1,4 @@
-﻿namespace ExceptionLib.Model.Error
+﻿namespace PrototypeException.Model.Error
 {
     /// <summary>
     ///     Error Model.

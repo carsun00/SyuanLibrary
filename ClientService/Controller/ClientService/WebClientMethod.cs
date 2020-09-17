@@ -1,11 +1,11 @@
-﻿using ClientService.Abstract;
-using ClientService.Model;
+﻿using PropotypeClientService.Abstract;
+using PropotypeClientService.Model;
 using System;
 using System.Collections.Specialized;
 using System.Net;
 using System.Text;
 
-namespace ClientService.Controller.ClientService
+namespace PropotypeClientService.Controller.ClientService
 {
     class WebClientMethod : AbstractClient<WebClient>
     {
@@ -58,7 +58,7 @@ namespace ClientService.Controller.ClientService
 
         public override ResponseData PostClient(string Url, string JsonString)
         {
-            ResponseData httpResponse; 
+            ResponseData httpResponse;
             try
             {
                 using(WebClient wc = client)

@@ -1,11 +1,11 @@
-﻿using Crypto.Interface;
-using Microsoft.Win32.SafeHandles;
+﻿using Microsoft.Win32.SafeHandles;
+using PropotypeCrypto.Interface;
 using System;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Crypto.Abstract.Crypto
+namespace PropotypeCrypto.Abstract.Crypto
 {
     /// <summary>
     ///     加密相關請以此方法作衍生。

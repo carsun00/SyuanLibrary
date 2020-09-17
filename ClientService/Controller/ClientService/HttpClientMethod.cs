@@ -1,10 +1,10 @@
-﻿using ClientService.Abstract;
-using ClientService.Model;
+﻿using PropotypeClientService.Abstract;
+using PropotypeClientService.Model;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 
-namespace ClientService.Controller.ClientService
+namespace PropotypeClientService.Controller.ClientService
 {
     class HttpClientMethod : AbstractClient<HttpClient>
     {

@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crypto", "Crypto\Crypto.csproj", "{1C64FD67-7519-400F-A8A6-085ED1AF4028}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropotypeCrypto", "Crypto\PropotypeCrypto.csproj", "{1C64FD67-7519-400F-A8A6-085ED1AF4028}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoConsloe", "CryptoConsloe\CryptoConsloe.csproj", "{2A70AA51-938A-4C85-8A68-7C7CB4DCFE3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropotypeCryptoConsloe", "CryptoConsloe\PropotypeCryptoConsloe.csproj", "{2A70AA51-938A-4C85-8A68-7C7CB4DCFE3E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientService", "ClientService\ClientService.csproj", "{D4B10E90-F77B-4178-94A1-414F7B134CC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropotypeClientService", "ClientService\PropotypeClientService.csproj", "{D4B10E90-F77B-4178-94A1-414F7B134CC8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionLib", "ExceptionLib\ExceptionLib.csproj", "{805766A0-4828-4AC3-BC8E-C3C34B8FC17B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrototypeException", "ExceptionLib\PrototypeException.csproj", "{805766A0-4828-4AC3-BC8E-C3C34B8FC17B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadFileString", "ReadFileString\ReadFileString.csproj", "{B6604BAF-DFEE-4C8E-8485-5E207D56D332}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibReadFileString", "ReadFileString\LibReadFileString.csproj", "{B6604BAF-DFEE-4C8E-8485-5E207D56D332}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoryCacheLib", "MemoryCacheLib\MemoryCacheLib.csproj", "{47D63779-E402-4491-A2AB-D1314B3E21A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibMemoryCache", "MemoryCacheLib\LibMemoryCache.csproj", "{47D63779-E402-4491-A2AB-D1314B3E21A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibDataFormat", "DataFormat\LibDataFormat.csproj", "{E497AB4C-2BE0-435D-8693-5BB36C12035E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibDataFormat", "DataFormat\LibDataFormat.csproj", "{E497AB4C-2BE0-435D-8693-5BB36C12035E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

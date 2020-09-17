@@ -3,7 +3,7 @@
 /// <summary>
 ///     指定編碼格式介面
 /// </summary>
-namespace Crypto.Interface
+namespace PropotypeCrypto.Interface
 {
     public interface ISymmetricAlgorithm
     {

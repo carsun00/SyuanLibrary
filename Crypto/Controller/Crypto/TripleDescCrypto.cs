@@ -1,8 +1,8 @@
-﻿using Crypto.Abstract.Crypto;
-using Crypto.Interface;
+﻿using PropotypeCrypto.Abstract.Crypto;
+using PropotypeCrypto.Interface;
 using System.Security.Cryptography;
 
-namespace Crypto.Controller.Crypto
+namespace PropotypeCrypto.Controller.Crypto
 {
     public class TripleDescCrypto : AbstractCrypto
     {

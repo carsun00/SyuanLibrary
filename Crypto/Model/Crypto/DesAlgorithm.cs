@@ -1,7 +1,7 @@
-﻿using Crypto.Abstract.Crypto;
+﻿using PropotypeCrypto.Abstract.Crypto;
 using System.Text;
 
-namespace Crypto.Model.Crypto
+namespace PropotypeCrypto.Model.Crypto
 {
     public class DesAlgorithm : AbstractSymmetricAlgorithm
     {

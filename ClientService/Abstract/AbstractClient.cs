@@ -1,9 +1,9 @@
-﻿using ClientService.Model;
-using Microsoft.Win32.SafeHandles;
+﻿using Microsoft.Win32.SafeHandles;
+using PropotypeClientService.Model;
 using System;
 using System.Runtime.InteropServices;
 
-namespace ClientService.Abstract
+namespace PropotypeClientService.Abstract
 {
     public abstract class AbstractClient<T> : IDisposable
     {

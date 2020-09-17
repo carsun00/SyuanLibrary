@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Crypto\Crypto.csproj" />
+    <ProjectReference Include="..\Crypto\PropotypeCrypto.csproj" />
   </ItemGroup>
 
 </Project>

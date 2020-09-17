@@ -1,7 +1,7 @@
-﻿using CryptoConsloe.Controller;
+﻿using PropotypeCryptoConsloe.Controller;
 using System;
 
-namespace CryptoConsloe
+namespace PropotypeCryptoConsloe
 {
     class Program
     {
@@ -28,7 +28,7 @@ namespace CryptoConsloe
             aes.Display();
         }
         #endregion
-        
+
         #region DES
         /// <summary>
         ///     Aes的加解密演示

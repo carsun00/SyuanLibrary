@@ -3,7 +3,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace DataFormat.LibFile
+namespace LibDataFormat.LibFile
 {
     /// <summary>
     ///     Onlt Fromat Data Type. Not string or date format.
@@ -152,7 +152,7 @@ namespace DataFormat.LibFile
             stm.Position = 0;
 
             XmlSerializer ser = new XmlSerializer(typeof(T));
-            T result = (ser.Deserialize(stm) as T);
+            T result = ser.Deserialize(stm) as T;
 
             return result;
         }

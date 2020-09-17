@@ -1,8 +1,8 @@
-﻿using Crypto.Abstract.Crypto;
+﻿using PropotypeCrypto.Abstract.Crypto;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Crypto.Model.Crypto
+namespace PropotypeCrypto.Model.Crypto
 {
     public class TripleDescAlgorithm : AbstractSymmetricAlgorithm
     {

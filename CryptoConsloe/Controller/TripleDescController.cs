@@ -1,9 +1,9 @@
-﻿using Crypto.Controller.Crypto;
-using Crypto.Model.Crypto;
+﻿using PropotypeCrypto.Controller.Crypto;
+using PropotypeCrypto.Model.Crypto;
 using System;
 using System.Security.Cryptography;
 
-namespace CryptoConsloe.Controller
+namespace PropotypeCryptoConsloe.Controller
 {
     public class TripleDescController
     {

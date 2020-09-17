@@ -1,10 +1,10 @@
-﻿using Crypto.Interface;
-using Microsoft.Win32.SafeHandles;
+﻿using Microsoft.Win32.SafeHandles;
+using PropotypeCrypto.Interface;
 using System;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 
-namespace Crypto.Abstract.Crypto
+namespace PropotypeCrypto.Abstract.Crypto
 {
     /// <summary>
     ///     金匙設定集中控管

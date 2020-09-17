@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace ReadFileString.Controller
+namespace LibReadFileString.LibFile
 {
     /// <summary>
     ///     File Reader.
