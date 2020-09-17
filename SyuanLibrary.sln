@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientService", "ClientServ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionLib", "ExceptionLib\ExceptionLib.csproj", "{805766A0-4828-4AC3-BC8E-C3C34B8FC17B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadFileString", "ReadFileString\ReadFileString.csproj", "{B6604BAF-DFEE-4C8E-8485-5E207D56D332}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadFileString", "ReadFileString\ReadFileString.csproj", "{B6604BAF-DFEE-4C8E-8485-5E207D56D332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryCacheLib", "MemoryCacheLib\MemoryCacheLib.csproj", "{47D63779-E402-4491-A2AB-D1314B3E21A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{B6604BAF-DFEE-4C8E-8485-5E207D56D332}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6604BAF-DFEE-4C8E-8485-5E207D56D332}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6604BAF-DFEE-4C8E-8485-5E207D56D332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D63779-E402-4491-A2AB-D1314B3E21A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D63779-E402-4491-A2AB-D1314B3E21A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D63779-E402-4491-A2AB-D1314B3E21A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D63779-E402-4491-A2AB-D1314B3E21A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
